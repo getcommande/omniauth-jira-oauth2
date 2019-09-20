@@ -29,7 +29,7 @@ Then `bundle install`.
 * Note the Client ID and Secret values in the App Details section.
 * Under APIs and Features, add the "Authorization code grants" feature.
   Configure the feature with your callback URL (something like
-  http://localhost:3000/auth/atlassian_oauth2/callback).
+  http://localhost:3000/auth/jira_oauth2/callback).
 * Under APIs and Features, add the "Jira platform REST API" API. Configure the
   API by adding the "View Jira issue data" and "View user profiles" scopes. These coincide with the scopes listed in the [Jira scopes](https://developer.atlassian.com/cloud/jira/platform/oauth-2-authorization-code-grants-3lo-for-apps/) section of the Atlassian Docs. Add additional scopes in this UI as needed.
 
@@ -40,7 +40,7 @@ Here's an example for adding the middleware to a Rails app in
 
 ```ruby
 Rails.application.config.middleware.use OmniAuth::Builder do
-  provider :atlassian_oauth2, ENV['ATLASSIAN_CLIENT_ID'], ENV['ATLASSIAN_CLIENT_SECRET'],
+  provider :jira_oauth2, ENV['ATLASSIAN_CLIENT_ID'], ENV['ATLASSIAN_CLIENT_SECRET'],
     scope: "offline_access read:jira-user read:jira-work",
     prompt: "consent"
 end
@@ -52,7 +52,7 @@ so that scope must be included by you in your OmniAuth configuration. The
 You may wish to include additional scopes depending on how you've configured
 your app in the Atlassian UI.
 
-You can now access the OmniAuth Atlassian OAuth2 URL: `/auth/atlassian_oauth2`
+You can now access the OmniAuth Atlassian OAuth2 URL: `/auth/jira_oauth2`
 
 NOTE: While developing your application, if you change the scope in the
 initializer you will need to restart your app server. Remember that either the
@@ -78,7 +78,7 @@ continues to have access to the sites you expect.
 
 ```ruby
 {
-  "provider" => "atlassian_oauth2",
+  "provider" => "jira_oauth2",
   "uid" => "100000000000000000000",
   "info" => {
     "name" => "John Smith",

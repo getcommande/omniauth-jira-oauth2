@@ -9,8 +9,8 @@ Gem::Specification.new do |gem|
   gem.name          = 'omniauth-jira-oauth2'
   gem.version       = OmniAuth::JiraOauth2::VERSION
   gem.license       = 'MIT'
-  gem.summary       = %(An Atlassian OAuth2 strategy for OmniAuth 1.x)
-  gem.description   = %(An Atlassian OAuth2 strategy for OmniAuth 1.x. This allows you to login to Atlassian Jira with your ruby app.)
+  gem.summary       = %(A Jira OAuth2 strategy for OmniAuth 1.x)
+  gem.description   = %(An Jira OAuth2 strategy for OmniAuth 1.x. This allows you to login to Jira with your Ruby app.)
   gem.authors       = ['Ben Standefer']
   gem.email         = ['benstandefer@gmail.com']
   gem.homepage      = 'https://github.com/aguynamedben/omniauth-atlassian-oauth2'
